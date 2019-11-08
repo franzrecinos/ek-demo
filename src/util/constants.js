@@ -1,3 +1,4 @@
+export const apiKey = 'iaU4t8mfDcneReg1vBAqnJGBPFsHYt'
 export const states = [
   {
     text: 'Alabama',

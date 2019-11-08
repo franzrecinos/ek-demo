@@ -1,10 +1,10 @@
 import React from 'react'
 import { useFormik } from 'formik'
 
-// CONSTANTS
+// `UTIL`
 import { states } from '../util/constants'
 
-function AddressForm(props) {
+function AddressForm({ onSubmit }) {
   const formik = useFormik({
     initialValues: {
       streetAddress: '',
@@ -13,9 +13,7 @@ function AddressForm(props) {
       zipCode: '',
     },
     // validate,
-    onSubmit: values => {
-      alert(JSON.stringify(values, null, 2))
-    },
+    onSubmit: values => onSubmit(values),
   })
 
   return (
@@ -82,9 +80,6 @@ function AddressForm(props) {
           <button className="button is-link" type="submit">
             Submit
           </button>
-        </div>
-        <div className="control">
-          <button className="button is-link is-light">Cancel</button>
         </div>
       </div>
     </form>
